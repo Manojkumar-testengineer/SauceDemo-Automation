@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SauceDemo Full Test Suite" parallel="tests" thread-count="2" verbose="1">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="UI Tests - Chrome" preserve-order="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="runners.UITestRunner"/>
+        </classes>
+    </test>
+
+    <test name="UI Tests - Firefox" preserve-order="true">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="runners.UITestRunner"/>
+        </classes>
+    </test>
+
+    <test name="API Tests - Simple Books API" preserve-order="true">
+        <classes>
+            <class name="runners.APITestRunner"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [SauceDemo Full Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="UI Tests - Chrome(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="runners.UITestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4 5 6 15"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- runners.UITestRunner -->
+    </classes>
+  </test> <!-- UI Tests - Chrome(failed) -->
+  <test thread-count="2" parallel="tests" name="API Tests - Simple Books API(failed)" verbose="0">
+    <classes>
+      <class name="runners.APITestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="7 8 9 10 11 12 13 14"/>
+        </methods>
+      </class> <!-- runners.APITestRunner -->
+    </classes>
+  </test> <!-- API Tests - Simple Books API(failed) -->
+  <test thread-count="2" parallel="tests" name="UI Tests - Firefox(failed)" verbose="0">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="runners.UITestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4 5 6 10 13 15"/>
+        </methods>
+      </class> <!-- runners.UITestRunner -->
+    </classes>
+  </test> <!-- UI Tests - Firefox(failed) -->
+</suite> <!-- Failed suite [SauceDemo Full Test Suite] -->
